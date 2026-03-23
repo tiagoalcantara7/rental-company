@@ -20,9 +20,7 @@ class RentalShop:
             raise ValueError("Unknown Product")
 
         if customer.age < 18 and product.rating == "R":
-            v: str = input("Do you have parental permission? y/n: ").lower().strip()
-
-            if not has_permission(v):
+            if not has_permission():
                 logging.error("the user is a minor, program closed ❌")
 
                 raise ValueError("You need parental permission")

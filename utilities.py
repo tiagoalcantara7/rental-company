@@ -1,23 +1,25 @@
 import logging
 
 
-def has_permission(x) -> bool:
+def has_permission() -> bool:
     """This function is responsible for validating the user's option"""
 
     logging.debug("Starting validation to find out if the user is an adult")
 
-    while x != "y" and x != "n":
+    answer: str = input("Do you have parental permission? y/n: ").lower().strip()
+    while answer != "y" and answer != "n":
         logging.warning("User placing an invalid option")
 
         print("Invalid option")
-        x = input("Do you have parental permission? y/n: ").lower().strip()
+        answer = input("Do you have parental permission? y/n: ").lower().strip()
 
-    if x == "y":
+    if answer == "y":
         logging.info("client has parental permission ✅")
 
         return True
 
     logging.warning("the client does not have parental consent")
+
     return False
 
 
