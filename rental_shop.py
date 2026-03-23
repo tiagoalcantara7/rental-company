@@ -1,7 +1,7 @@
 import logging
 from people import Customer
 from products import Product
-from utilities import is_adult
+from utilities import has_permission
 
 
 class RentalShop:
@@ -22,26 +22,12 @@ class RentalShop:
         if customer.age < 18 and product.rating == "R":
             v: str = input("Do you have parental permission? y/n: ").lower().strip()
 
-            if not is_adult(v):
+            if not has_permission(v):
                 logging.error("the user is a minor, program closed ❌")
 
                 raise ValueError("You need parental permission")
 
-        if customer.product is None:
-            logging.error("The customer has not added any products ❌")
+        return product.rent()
 
-            raise ValueError("Customer has no product assigned")
-
-        logging.info("Withdraw validation was successful ✅")
-
-        return customer.product.rent()
-
-    def return_(self, customer: Customer, product: Product):
-        if customer.product is None:
-            logging.error("The customer did not rent any products ❌")
-
-            raise ValueError("Customer has no product assigned")
-
-        logging.info("return function validation was successful ✅")
-
-        return customer.product.return_()
+    def return_(self, product: Product):
+        return product.return_()

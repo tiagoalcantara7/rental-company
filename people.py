@@ -1,5 +1,4 @@
 from abc import ABC
-from products import Product
 
 
 class People(ABC):
@@ -43,7 +42,6 @@ class Customer(People):
     def __init__(self, name: str, age: int, registration_number: int) -> None:
         super().__init__(name, age)
         self.registration_number = registration_number
-        self.product: Product | None = None
 
 
 class Employed(People):

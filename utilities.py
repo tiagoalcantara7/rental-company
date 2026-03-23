@@ -1,7 +1,7 @@
 import logging
 
 
-def is_adult(x) -> bool:
+def has_permission(x) -> bool:
     """This function is responsible for validating the user's option"""
 
     logging.debug("Starting validation to find out if the user is an adult")
