@@ -1,8 +1,6 @@
 # Rental Company System
 
-A movie and TV show rental system I built while studying OOP in Python.
-Second project in the series — same stack as the bank system but applied
-to a different domain.
+A beginner project I built to practice OOP in Python. Covers movies and TV show rentals with age restriction handling
 
 ## About
 
